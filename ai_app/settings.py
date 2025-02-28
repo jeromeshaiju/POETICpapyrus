@@ -67,13 +67,12 @@ WSGI_APPLICATION = 'POETICpapyrus.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-import dj_database_url
-import os
-
+DATABASES = {}
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': {
+        'ENGINE': 'django.db.backends.dummy'  # This prevents Django from expecting a real DB
+    }
 }
-
 
 
 # Password validation
