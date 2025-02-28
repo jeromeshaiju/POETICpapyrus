@@ -60,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ai_app.wsgi.application'
+WSGI_APPLICATION = 'POETICpapyrus.wsgi.application'
 
 
 # Database
