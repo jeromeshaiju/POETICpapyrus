@@ -15,8 +15,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'jerome-is-creating-this-site')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["POETICpapyrus.onrender.com"]
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'poeticpapyrus-2025.onrender.com',
+]
 
 # Application definition
 
