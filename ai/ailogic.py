@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from google.generativeai import Client
+from google import genai
 import fitz  # PyMuPDF for PDFs
 
 load_dotenv()
