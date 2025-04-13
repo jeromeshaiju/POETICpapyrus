@@ -44,8 +44,7 @@ def process_input_with_pdf(pdf_file_path):
 
         response = client.models.generate_content(
             model="gemini-2.0-flash",
-            contents=message_to_send
-        )
+            contents=[{"parts": [{"text": message_to_send}]}]        )
         return response.text
             
 
