@@ -23,26 +23,26 @@ def extract_text_from_pdf(pdf_path):
 def process_input_with_pdf(pdf_file_path):
     pdf_text = extract_text_from_pdf(pdf_file_path)
     if pdf_text:
-        generation_config = {
-                    "temperature": 0.95,
-                    "top_p": 1,
-                    "top_k": 0,
-                    "max_output_tokens": 2048,
-                }
+            generation_config = {
+                "temperature": 0.95,
+                "top_p": 1,
+                "top_k": 0,
+                "max_output_tokens": 2048,
+            }
             
-                # Initialize the model
-                model = genai.GenerativeModel(
-                    model_name="gemini-2.0-flash",
-                    generation_config=generation_config,
-                )
+            # Initialize the model
+            model = genai.GenerativeModel(
+                model_name="gemini-2.0-flash",
+                generation_config=generation_config,
+            )
             
-                message_to_send = pdf_text + "\n\nMake it into a poem for kids. Include everything."
-    
-                # Start a chat session and send user input
-                chat_session = model.start_chat(history=[])
-                response = chat_session.send_message(message_to_send)
-        
-                return response.text
+            message_to_send = pdf_text + "\n\nMake it into a poem for kids. Include everything."
+            
+            # Start a chat session and send user input
+            chat_session = model.start_chat(history=[])
+            response = chat_session.send_message(message_to_send)
+            
+            return response.text
             
 
     else:
