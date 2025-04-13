@@ -24,7 +24,7 @@ def extract_text_from_pdf(pdf_path):
 def process_input_with_pdf(pdf_file_path):
     pdf_text = extract_text_from_pdf(pdf_file_path)
     if pdf_text:
-        generation_config = {
+        '''generation_config = {
             "temperature": 0.95,
             "top_p": 1,
             "top_k": 0,
@@ -39,8 +39,18 @@ def process_input_with_pdf(pdf_file_path):
         message_to_send = pdf_text + "\n\nMake it into a poem for kids. Include everything."
 
         chat_session = model.start_chat(history=[])
-        response = chat_session.send_message(message_to_send)
-        
+        response = chat_session.send_message(message_to_send)'''
+        from google import genai
+    
+        client = genai.Client(api_key="YOUR_API_KEY")
+        message_to_send = pdf_text + "\n\nMake it into a poem for kids. Include everything."
+
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=message_to_send
+        )
         return response.text
+            
+
     else:
         return "Failed to extract text from the PDF."
