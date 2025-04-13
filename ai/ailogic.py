@@ -39,7 +39,7 @@ def process_input_with_pdf(pdf_file_path):
 
         chat_session = model.start_chat(history=[])
         response = chat_session.send_message(message_to_send)'''
-    
+        from google import genai
         client = genai.Client(api_key=api_key)
         message_to_send = pdf_text + "\n\nMake it into a poem for kids. Include everything."
 
