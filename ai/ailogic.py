@@ -7,7 +7,6 @@ load_dotenv()
 
 api_key = os.getenv("AI_API_KEY")
 
-genai.configure(api_key=api_key)
 
 def extract_text_from_pdf(pdf_path):
     try:
@@ -42,7 +41,7 @@ def process_input_with_pdf(pdf_file_path):
         response = chat_session.send_message(message_to_send)'''
         from google import genai
     
-        client = genai.Client(api_key="YOUR_API_KEY")
+        client = genai.Client(api_key=api_key)
         message_to_send = pdf_text + "\n\nMake it into a poem for kids. Include everything."
 
         response = client.models.generate_content(
