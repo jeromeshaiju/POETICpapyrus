@@ -26,7 +26,10 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.contenttypes',
+    'django.contrib.auth',
 ]
 
 MIDDLEWARE = [
