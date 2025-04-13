@@ -31,9 +31,8 @@ def process_input_with_pdf(pdf_file_path):
             "max_output_tokens": 2048,
         }
 
-        # ✅ Change: use "models/gemini-1.0-pro" (with correct format)
         model = genai.GenerativeModel(
-            model_name="models/gemini-1.0-pro",  # ✅ Correct format for `v1beta`
+            model_name="gemini-1.0-pro", 
             generation_config=generation_config,
         )
 
